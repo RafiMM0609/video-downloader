@@ -2,7 +2,7 @@
 # Dockerfile: UnduhVideo (Nuxt 3 + yt-dlp + ffmpeg)
 # ==========================================
 
-FROM node:20-bookworm-slim AS base
+FROM node:22-bookworm-slim AS base
 
 # Install system dependencies (ffmpeg, python3, curl, ca-certificates)
 RUN apt-get update && apt-get install -y --no-install-recommends \
