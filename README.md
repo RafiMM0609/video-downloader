@@ -103,3 +103,5 @@ npm install
 npm run dev
 ```
 Buka browser di `http://localhost:3000`.
+
+If run in docker compose, open port 3030

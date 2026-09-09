@@ -8,7 +8,7 @@ services:
     container_name: unduhvideo-app
     restart: unless-stopped
     ports:
-      - "${PORT:-3000}:3000"
+      - "3030:3000"
     environment:
       - PORT=3000
       - HOST=0.0.0.0
