@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: unduhvideo-app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0
+      - MAX_CONCURRENT=${MAX_CONCURRENT:-3}
+      - MAX_VIDEO_DURATION=${MAX_VIDEO_DURATION:-10800}
+      - DOWNLOAD_DIR=/app/downloads
+      - YTDL_COOKIES_PATH=/app/cookies.txt
+    volumes:
+      - ./downloads:/app/downloads
+      # Opsional: Jika ingin inject cookies YouTube, buat file cookies.txt di direktori ini
+      # - ./cookies.txt:/app/cookies.txt:ro
