@@ -216,9 +216,6 @@ onUnmounted(() => {
       <h1 class="hero-title">
         Download Video & Musik <span>YouTube</span>
       </h1>
-      <p class="hero-subtitle">
-        Tinggal salin link dari YouTube, tempel di sini, dan tekan unduh. Gampang, cepat, dan ramah untuk siapa saja!
-      </p>
     </section>
 
     <!-- Error Alert Box -->
