@@ -37,6 +37,7 @@ ENV PORT=3000
 ENV HOST=0.0.0.0
 ENV DOWNLOAD_DIR=/app/downloads
 ENV YTDL_PATH=/usr/local/bin/yt-dlp
+ENV FFMPEG_PATH=/usr/bin/ffmpeg
 
 EXPOSE 3000
 

@@ -50,8 +50,7 @@ const emit = defineEmits<{
       >
         <Video :size="26" />
         <div class="btn-text-group">
-          <span>Download Video (MP4)</span>
-          <span class="btn-subtext">Kualitas Terbaik (Otomatis)</span>
+          <span>Download Video</span>
         </div>
       </button>
 
@@ -64,8 +63,7 @@ const emit = defineEmits<{
       >
         <Music :size="26" />
         <div class="btn-text-group">
-          <span>Download Musik (MP3)</span>
-          <span class="btn-subtext">Audio Jernih (320kbps)</span>
+          <span>Download Musik</span>
         </div>
       </button>
     </div>

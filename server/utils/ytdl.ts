@@ -51,8 +51,22 @@ export function getYtDlpPath(): string {
   return 'yt-dlp'
 }
 
+let _systemFfmpegAvailable: boolean | null = null
+
 export function getFfmpegPath(): string | undefined {
-  return resolveCandidatePath(process.env.FFMPEG_PATH, 'bin/ffmpeg')
+  const resolved = resolveCandidatePath(process.env.FFMPEG_PATH, 'bin/ffmpeg')
+  if (resolved) return resolved
+
+  if (_systemFfmpegAvailable === null) {
+    try {
+      const res = spawnSync('ffmpeg', ['-version'], { timeout: 2000 })
+      _systemFfmpegAvailable = res.status === 0
+    } catch {
+      _systemFfmpegAvailable = false
+    }
+  }
+
+  return _systemFfmpegAvailable ? 'ffmpeg' : undefined
 }
 
 export function getCookiesPath(): string | undefined {
